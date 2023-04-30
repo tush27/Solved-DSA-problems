@@ -41,7 +41,7 @@ public:
             int type = edge[0], one = edge[1], two = edge[2];
             switch(type) {
                 case 3:
-                    edgesAdded += (bob.unite(one, two) & alice.unite(one, two));
+                    edgesAdded += (bob.unite(one, two) | alice.unite(one, two));
                     break;
                 case 2:
                     edgesAdded += bob.unite(one, two);
