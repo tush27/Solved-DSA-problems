@@ -3,11 +3,10 @@ public:
     int diagonalSum(vector<vector<int>>& mat) {
         int sum=0;
         int n=mat.size();
-        for(int primary=0;primary<n;primary++){
-            int secondary = n-primary - 1;
-            sum+=mat[primary][primary] + mat[primary][secondary];
-            if(primary == secondary)
-                sum-=mat[primary][primary];
+        for(int i=0;i<n;i++){
+            sum+=mat[i][i] + mat[i][n-i-1];
+            if(i == n-i-1)
+                sum-=mat[i][i];
         }
         return sum;
         
